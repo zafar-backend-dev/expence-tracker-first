@@ -16,18 +16,31 @@ server:
     remoteip:
       remote-ip-header: x-forwarded-for
       protocol-header: x-forwarded-proto
+#spring:
+#  application:
+#    name: online-shop-telegram-bot
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://127.0.0.1:5432/testdb
+#    username: postgres
+#    password: 122333
+
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    generate-ddl: true
 spring:
   application:
     name: online-shop-telegram-bot
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://127.0.0.1:5432/testdb
-    username: postgres
-    password: 122333
+    url: jdbc:postgresql://ep-withered-hill-b8s25lwy-pooler.c-14.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+    username: neondb_owner
+    password: npg_n8QVFXTN9Boc
   jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
-    generate-ddl: true
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
